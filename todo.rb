@@ -34,7 +34,7 @@ class Todo < ActiveRecord::Base
     puts h[:due_in_days]
     Todo.create!(todo_text: h[:todo_text], due_date: Date.today + h[:due_in_days], completed: false)
   end
-  def self.mark_as_completed(todo_id)
+  def self.mark_as_complete(todo_id)
     todo = Todo.find(todo_id)
     todo.completed = true
     todo.save
